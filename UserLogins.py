@@ -29,20 +29,11 @@ pw = input('Please enter your password: ')
 #     return 'Get outta here!'
 
 def is_valid_credentials(username, password):
-    if username == user and password == pw:
+    if username in credentials and password == credentials.get(username):
         print('Your credentials have been verified.')
         return True
     else:
         print('Your username and password do not match.')
         return False
-
-is_valid_credentials('peter', 'park')
-
-for id in credentials:
-    if id == user and pw == id[1]:
-        print('Your credentials have been verified.')
-        return True
-    else: 
-        print('Your username and password do not match.')
-        return False
-
+        
+is_valid_credentials('peter', 'park') #example to check if there is a matching username & password in credentials dictionary
